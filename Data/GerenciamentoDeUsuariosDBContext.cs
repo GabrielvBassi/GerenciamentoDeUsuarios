@@ -6,8 +6,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GerenciamentoDeUsuarios.Data
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class GerenciamentoDeUsuariosDBContext : DbContext
     {
         public GerenciamentoDeUsuariosDBContext(DbContextOptions<GerenciamentoDeUsuariosDBContext> options): base(options) 
@@ -25,3 +23,4 @@ namespace GerenciamentoDeUsuarios.Data
 
     }
 }
+

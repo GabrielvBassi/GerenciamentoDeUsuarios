@@ -3,6 +3,8 @@ using GerenciamentoDeUsuarios.Models;
 using GerenciamentoDeUsuarios.Repositorios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GerenciamentoDeUsuarios.Repositorios
 {
@@ -17,7 +19,6 @@ namespace GerenciamentoDeUsuarios.Repositorios
         public async Task<List<UsuarioModel>> BuscarListagemUsuarios()
         {
             return await _dbContext.Usuarios.ToListAsync();
-
         }
 
         public async Task<UsuarioModel> BuscarListagemUsuarioPorId(int id)
@@ -68,7 +69,6 @@ namespace GerenciamentoDeUsuarios.Repositorios
             return true;
         }
 
-
-
+     
     }
 }
