@@ -4,17 +4,17 @@ Foi utilizado neste projeto o .NET FRAMEWORK 6.0
 
 Foi utilizado neste projeto as seguintes bibliotecas:
 
-- Microsoft.EntityFrameworkCore (Vers„o6.0.0)
-- Microsoft.EntityFrameworkCore.Design (Vers„o6.0.0)
-- Microsoft.EntityFrameworkCore.SqlServer (Vers„o6.0.0)
-- Microsoft.EntityFrameworkCore.Tools (Vers„o6.0.0)
-- Swashbuckle.AspNetCore (Vers„o6.2.3)
+- Microsoft.EntityFrameworkCore (Vers√£o6.0.0)
+- Microsoft.EntityFrameworkCore.Design (Vers√£o6.0.0)
+- Microsoft.EntityFrameworkCore.SqlServer (Vers√£o6.0.0)
+- Microsoft.EntityFrameworkCore.Tools (Vers√£o6.0.0)
+- Swashbuckle.AspNetCore (Vers√£o6.2.3)
 
-Para que possa iniciar o projeto com sucesso, È necess·rio realizar os seguintes passos:
+Para que possa iniciar o projeto com sucesso, √© necess√°rio realizar os seguintes passos:
 
-1- Definir conex„o com o banco de dados:
-Acessar o arquivo "appsettings.json" e alterar o campo "ConnectionStrings": {"DataBase":" e inserir a string de conex„o com o banco de dados SQLSERVER,
-informando o diretÛrio e os dados de acesso para que sejam liberadas as permissıes do banco de dados.
+1- Definir conex√£o com o banco de dados:
+Acessar o arquivo "appsettings.json" e alterar o campo "ConnectionStrings": {"DataBase":" e inserir a string de conex√£o com o banco de dados SQLSERVER,
+informando o diret√≥rio e os dados de acesso para que sejam liberadas as permiss√µes do banco de dados.
 
 2 - Executar a Migration:
 Acessar o "Console de gerenciador de pacotes"
@@ -23,21 +23,21 @@ Executar os seguintes comandos:
 	Update-Database
 
 
-ApÛs esses passos, ser· possÌvel a utilizaÁ„o da API.
+Ap√≥s esses passos, ser√° poss√≠vel a utiliza√ß√£o da API.
 
 
 
 
-A API foi criada utilizando o EntityFramework para facilitar a criaÁ„o e integraÁ„o com o banco a partir do cÛdigo fonte desenvolvido,
-o que facilita a manutenÁ„o do cÛdigo se necess·rio.
+A API foi criada utilizando o EntityFramework para facilitar a cria√ß√£o e integra√ß√£o com o banco a partir do c√≥digo fonte desenvolvido,
+o que facilita a manuten√ß√£o do c√≥digo se necess√°rio.
 
-Utilizei da definiÁ„oi do controller para implementar os mÈtodos criados no repositÛrio e definir mÈtodos adicionais para a validaÁ„o.
-Devido ao tempo curto de desenvolvimento do projeto, n„o foi possÌvel criar uma classe para a classificaÁ„o das exceÁıes geradas,
-ent„o, opetei por realizar o tratamento delas individualmente no prÛprio 'UsuarioController'.
+Utilizei da defini√ß√£o do controller para implementar os m√©todos criados no reposit√≥rio e definir m√©todos adicionais para a valida√ß√£o.
+Devido ao tempo curto de desenvolvimento do projeto, n√£o foi poss√≠vel criar uma classe para a classifica√ß√£o das exce√ß√µes geradas,
+ent√£o, optei por realizar o tratamento delas individualmente no pr√≥prio 'UsuarioController'.
 
-Defini algumas informaÁıes complementares no Swagger para facilitar o entendimento dos usu·rios da API.
+Defini algumas informa√ß√µes complementares no Swagger para facilitar o entendimento dos usu√°rios da API.
 
-Precisei definir uma sobrecarga de mÈtodos para a busca por CPF e Email, devido a necessidade de validar os campos para evitar a duplicidade no cadastro.
-Como encontrei uma situaÁ„o onde ocorria um erro ao alterar o usu·rio, mantendo as informaÁıes, optei por realizar a sobrecarga para evitar a situaÁ„o,
-n„o foi a melhor maneira, mas foi a mais r·pida que consegui identificar para correÁ„o da n„o conformidade.
+Precisei definir uma sobrecarga de m√©todos para a busca por CPF e Email, devido a necessidade de validar os campos para evitar a duplicidade no cadastro.
+Como encontrei uma situa√ß√£o onde ocorria um erro ao alterar o usu√°rio, mantendo as informa√ß√µes, optei por realizar a sobrecarga para evitar essa situa√ß√£o,
+n√£o foi a melhor maneira, mas foi a mais r√°pida que consegui identificar para corre√ß√£o da n√£o conformidade.
 
