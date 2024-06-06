@@ -2,6 +2,8 @@ using GerenciamentoDeUsuarios.Data;
 using GerenciamentoDeUsuarios.Repositorios;
 using GerenciamentoDeUsuarios.Repositorios.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 namespace GerenciamentoDeUsuarios
 {
@@ -15,7 +17,25 @@ namespace GerenciamentoDeUsuarios
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            //builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Gerenciamento De Usuarios.WebAPI",
+                    Version = "v1",
+                    Description = "Api para controle de usuários.",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Gabriel Vicente Bassi",
+                        Email = string.Empty,
+                    },
+                });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
 
             builder.Services.AddEntityFrameworkSqlServer()
                 .AddDbContext<GerenciamentoDeUsuariosDBContext>(
@@ -32,6 +52,7 @@ namespace GerenciamentoDeUsuarios
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
 
             app.UseHttpsRedirection();
 

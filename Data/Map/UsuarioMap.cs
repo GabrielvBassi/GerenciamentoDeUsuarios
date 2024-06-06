@@ -14,6 +14,12 @@ namespace GerenciamentoDeUsuarios.Data.Map
             builder.Property(x => x.Email).IsRequired().HasMaxLength(90);
             builder.Property(x => x.Senha).IsRequired().HasMaxLength(90);
             builder.Property(x => x.Cpf).IsRequired().HasMaxLength(11);
+            builder.Property(x => x.Nascimento).IsRequired().HasMaxLength(20);
+
+            //Atribuindo ao CPF um campo unico, evitando duplicidade
+            builder.HasIndex(x => x.Cpf).IsUnique();
+            builder.HasIndex(x => x.Email).IsUnique();
+
 
 
 

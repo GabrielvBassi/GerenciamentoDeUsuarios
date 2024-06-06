@@ -26,6 +26,35 @@ namespace GerenciamentoDeUsuarios.Repositorios
             return await _dbContext.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
         }
 
+        public async Task<UsuarioModel> BuscarUsuarioCpf(string cpf, int id)
+        {
+            //Valida se o CPF existe
+            var usuario = _dbContext.Usuarios.Where(x => x.Cpf == cpf && x.Id != id);
+            return await usuario.FirstOrDefaultAsync();
+        }
+
+        public async Task<UsuarioModel> BuscarUsuarioEmail(string email, int id)
+        {
+            //Valida se o Email existe
+            var usuario = _dbContext.Usuarios.Where(x => x.Email == email && x.Id != id);
+            return await usuario.FirstOrDefaultAsync();
+        }
+
+        public async Task<UsuarioModel> BuscarUsuarioCpf(string cpf)
+        {
+            //Valida se o CPF existe
+            var usuario = _dbContext.Usuarios.Where(x => x.Cpf == cpf);
+            return await usuario.FirstOrDefaultAsync();
+        }
+
+        public async Task<UsuarioModel> BuscarUsuarioEmail(string email)
+        {
+            //Valida se o Email existe
+            var usuario = _dbContext.Usuarios.Where(x => x.Email == email);
+            return await usuario.FirstOrDefaultAsync();
+        }
+
+
         public async Task<UsuarioModel> AdicionarUsuario(UsuarioModel usuario)
         {
             await _dbContext.Usuarios.AddAsync(usuario);
@@ -47,6 +76,7 @@ namespace GerenciamentoDeUsuarios.Repositorios
             usuarioPorId.Email = usuario.Email;
             usuarioPorId.Cpf = usuario.Cpf;
             usuarioPorId.Senha = usuario.Senha;
+            usuarioPorId.Nascimento = usuario.Nascimento;
 
              _dbContext.Usuarios.Update(usuarioPorId);
             await _dbContext.SaveChangesAsync();
