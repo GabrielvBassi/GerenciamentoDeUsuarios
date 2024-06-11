@@ -1,6 +1,6 @@
 # GerenciamentoDeUsuarios
 
-Foi utilizado neste projeto o .NET FRAMEWORK 6.0
+Foi utilizado neste projeto o .NET 6.0
 
 Foi utilizado neste projeto as seguintes bibliotecas:
 
