@@ -2,7 +2,7 @@
 
 Foi utilizado neste projeto o .NET 6.0
 
-Foi utilizado neste projeto as seguintes bibliotecas:
+Foram utilizadas as seguintes bibliotecas:
 
 - Microsoft.EntityFrameworkCore (Versão6.0.0)
 - Microsoft.EntityFrameworkCore.Design (Versão6.0.0)
